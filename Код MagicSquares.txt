@@ -1,0 +1,2847 @@
+unit Unit13;//Модуль заставки
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, MPlayer, ExtCtrls, StdCtrls, jpeg;
+
+type
+  TZastavka = class(TForm)
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Label1: TLabel;
+    Image1: TImage;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Zastavka: TZastavka;
+
+implementation
+
+uses Main;
+
+{$R *.dfm}
+
+procedure TZastavka.SpeedButton1Click(Sender: TObject);
+begin
+MainForm.Show;
+Zastavka.Hide;
+
+//Запуск фоновой мелодии
+MainForm.MediaPlayer1.FileName:='music.mp3';
+MainForm.MediaPlayer1.Open;
+MainForm.MediaPlayer1.Play;
+end;
+
+procedure TZastavka.SpeedButton2Click(Sender: TObject);
+begin
+MainForm.Show;
+Zastavka.Hide;
+end;
+
+procedure TZastavka.FormCreate(Sender: TObject);
+begin
+//Расположение формы по центру экрана
+Zastavka.Left:= (Screen.WorkAreaWidth - Zastavka.Width) div 2;
+Zastavka.Top:= (Screen.WorkAreaHeight - Zastavka.Height) div 2;
+end;
+
+end.
+
+unit Unit15;//Модуль о программе
+…
+procedure TAboutProgramm.SpeedButton1Click(Sender: TObject);
+begin
+AboutProgramm.Close;
+end;
+
+procedure TAboutProgramm.FormCreate(Sender: TObject);
+begin
+//Расположение формы по центру экрана
+AboutProgramm.Left:= (Screen.WorkAreaWidth - AboutProgramm.Width) div 2;
+AboutProgramm.Top:= (Screen.WorkAreaHeight - AboutProgramm.Height) div 2;
+end;
+
+end.
+
+
+unit Begins;//Модуль выбора уровня на начальной сложности
+…
+procedure TBgns.SpeedButton1Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Close;
+BgnsLvl.Edit1.Show;
+BgnsLvl.SpeedButton1.Show;
+
+//Заполнение ячеек
+BgnsLvl.StringGrid1.Cells[0,0]:='2';
+BgnsLvl.StringGrid1.Cells[0,1]:='7';
+BgnsLvl.StringGrid1.Cells[0,2]:='6';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='9';
+BgnsLvl.StringGrid1.Cells[1,1]:='';
+BgnsLvl.StringGrid1.Cells[1,2]:='1';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='4';
+BgnsLvl.StringGrid1.Cells[2,1]:='3';
+BgnsLvl.StringGrid1.Cells[2,2]:='8';
+end;
+
+procedure TBgns.SpeedButton2Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit2.Show;
+BgnsLvl.SpeedButton2.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='9';
+BgnsLvl.StringGrid1.Cells[0,1]:='4';
+BgnsLvl.StringGrid1.Cells[0,2]:='5';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='2';
+BgnsLvl.StringGrid1.Cells[1,1]:='6';
+BgnsLvl.StringGrid1.Cells[1,2]:='10';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='7';
+BgnsLvl.StringGrid1.Cells[2,1]:='';
+BgnsLvl.StringGrid1.Cells[2,2]:='3';
+end;
+
+procedure TBgns.SpeedButton3Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit3.Show;
+BgnsLvl.SpeedButton3.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='10';
+BgnsLvl.StringGrid1.Cells[0,1]:='5';
+BgnsLvl.StringGrid1.Cells[0,2]:='6';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='3';
+BgnsLvl.StringGrid1.Cells[1,1]:='7';
+BgnsLvl.StringGrid1.Cells[1,2]:='';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='8';
+BgnsLvl.StringGrid1.Cells[2,1]:='9';
+BgnsLvl.StringGrid1.Cells[2,2]:='4';
+end;
+
+procedure TBgns.SpeedButton4Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit4.Show;
+BgnsLvl.SpeedButton4.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='';
+BgnsLvl.StringGrid1.Cells[0,1]:='6';
+BgnsLvl.StringGrid1.Cells[0,2]:='8';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='2';
+BgnsLvl.StringGrid1.Cells[1,1]:='10';
+BgnsLvl.StringGrid1.Cells[1,2]:='18';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='12';
+BgnsLvl.StringGrid1.Cells[2,1]:='14';
+BgnsLvl.StringGrid1.Cells[2,2]:='4';
+end;
+
+procedure TBgns.SpeedButton5Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit5.Show;
+BgnsLvl.Edit5b.Show;
+BgnsLvl.SpeedButton5.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='17';
+BgnsLvl.StringGrid1.Cells[0,1]:='12';
+BgnsLvl.StringGrid1.Cells[0,2]:='';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='10';
+BgnsLvl.StringGrid1.Cells[1,1]:='14';
+BgnsLvl.StringGrid1.Cells[1,2]:='18';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='15';
+BgnsLvl.StringGrid1.Cells[2,1]:='';
+BgnsLvl.StringGrid1.Cells[2,2]:='11';
+end;
+
+procedure TBgns.SpeedButton6Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit6.Show;
+BgnsLvl.Edit6b.Show;
+BgnsLvl.SpeedButton6.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='80';
+BgnsLvl.StringGrid1.Cells[0,1]:='30';
+BgnsLvl.StringGrid1.Cells[0,2]:='40';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='';
+BgnsLvl.StringGrid1.Cells[1,1]:='50';
+BgnsLvl.StringGrid1.Cells[1,2]:='';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='60';
+BgnsLvl.StringGrid1.Cells[2,1]:='70';
+BgnsLvl.StringGrid1.Cells[2,2]:='20';
+end;
+
+procedure TBgns.SpeedButton7Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit7.Show;
+BgnsLvl.Edit7b.Show;
+BgnsLvl.SpeedButton7.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='24';
+BgnsLvl.StringGrid1.Cells[0,1]:='';
+BgnsLvl.StringGrid1.Cells[0,2]:='20';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='17';
+BgnsLvl.StringGrid1.Cells[1,1]:='21';
+BgnsLvl.StringGrid1.Cells[1,2]:='25';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='22';
+BgnsLvl.StringGrid1.Cells[2,1]:='23';
+BgnsLvl.StringGrid1.Cells[2,2]:='';
+end;
+
+procedure TBgns.SpeedButton8Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit8.Show;
+BgnsLvl.Edit8b.Show;
+BgnsLvl.SpeedButton8.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='';
+BgnsLvl.StringGrid1.Cells[0,1]:='3';
+BgnsLvl.StringGrid1.Cells[0,2]:='18';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='9';
+BgnsLvl.StringGrid1.Cells[1,1]:='15';
+BgnsLvl.StringGrid1.Cells[1,2]:='';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='12';
+BgnsLvl.StringGrid1.Cells[2,1]:='27';
+BgnsLvl.StringGrid1.Cells[2,2]:='6';
+end;
+
+procedure TBgns.SpeedButton9Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit9.Show;
+BgnsLvl.Edit9b.Show;
+BgnsLvl.SpeedButton9.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='21';
+BgnsLvl.StringGrid1.Cells[0,1]:='22';
+BgnsLvl.StringGrid1.Cells[0,2]:='17';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='16';
+BgnsLvl.StringGrid1.Cells[1,1]:='20';
+BgnsLvl.StringGrid1.Cells[1,2]:='24';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='';
+BgnsLvl.StringGrid1.Cells[2,1]:='18';
+BgnsLvl.StringGrid1.Cells[2,2]:='';
+end;
+
+procedure TBgns.SpeedButton10Click(Sender: TObject);
+begin
+BgnsLvl.Show;
+Bgns.Hide;
+BgnsLvl.Edit10.Show;
+BgnsLvl.Edit10b.Show;
+BgnsLvl.Edit10c.Show;
+BgnsLvl.SpeedButton10.Show;
+
+BgnsLvl.StringGrid1.Cells[0,0]:='';
+BgnsLvl.StringGrid1.Cells[0,1]:='15';
+BgnsLvl.StringGrid1.Cells[0,2]:='5';
+
+BgnsLvl.StringGrid1.Cells[1,0]:='3';
+BgnsLvl.StringGrid1.Cells[1,1]:='11';
+BgnsLvl.StringGrid1.Cells[1,2]:='';
+
+BgnsLvl.StringGrid1.Cells[2,0]:='17';
+BgnsLvl.StringGrid1.Cells[2,1]:='';
+BgnsLvl.StringGrid1.Cells[2,2]:='9';
+end;
+
+procedure TBgns.Home1Click(Sender: TObject);
+begin
+MainForm.Show;
+Bgns.Close;
+end;
+
+procedure TBgns.FormCreate(Sender: TObject);
+begin
+Bgns.Width:=MainForm.Width;
+Bgns.Height:=MainForm.Height;
+Bgns.Left:=MainForm.Left;
+Bgns.Top:=MainForm.Top;
+end;
+
+procedure TBgns.FormActivate(Sender: TObject);
+var F: TextFile;
+S: string;
+begin
+
+AssignFile(F,'Bgns1.txt'); //Проверка прохождения предыдущего уровня
+Reset(F);
+ReadLn(F, S);
+
+//Открытие уровней по количеству баллов
+If StrToInt(S)>=1 then
+begin
+ SpeedButton2.Visible:=True;
+ If StrToInt(S)>=2 then
+ begin
+  SpeedButton3.Visible:=True;
+  If StrToInt(S)>=3 then
+  begin
+   SpeedButton4.Visible:=True;
+   If StrToInt(S)>=4 then
+   begin
+    SpeedButton5.Visible:=True;
+    If StrToInt(S)>=5 then
+    begin
+      SpeedButton6.Visible:=True;
+      If StrToInt(S)>=6 then
+      begin
+       SpeedButton6.Visible:=True;
+       If StrToInt(S)>=6 then
+       begin
+        SpeedButton7.Visible:=True;
+        If StrToInt(S)>=7 then
+        begin
+         SpeedButton8.Visible:=True;
+         If StrToInt(S)>=8 then
+         begin
+          SpeedButton9.Visible:=True;
+          If StrToInt(S)>=9 then
+           SpeedButton10.Visible:=True;
+         end;
+        end;
+       end;
+      end;
+    end;
+   end;
+  end;
+ end;
+end;
+
+CloseFile(F);
+end;
+
+end.
+
+unit Unit3;//Модуль с уровнями начальной сложности
+…
+procedure TBgnsLvl.FormCreate(Sender: TObject);
+begin
+BgnsLvl.Width:=MainForm.Width;//Ширина формы  BgnsLvl = ширине формы  MainForm
+BgnsLvl.Height:=MainForm.Height;//Высота формы  BgnsLvl = высоте формы  MainForm
+BgnsLvl.Left:=MainForm.Left;//Левый отступ формы  BgnsLvl = левому отступу формы MainForm
+BgnsLvl.Top:=MainForm.Top;//Нижний отступ формы  BgnsLvl = нижнему отступу формы MainForm
+
+end;
+
+procedure TBgnsLvl.SpeedButton1Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+
+//Запись результата
+if Edit1.Text<>'' then
+begin
+if Edit1.Text='5' then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='0' then
+ begin
+
+  //Добавить балл за прохождение
+  P:='1';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit1.Text:='';//Очистить ячейку
+ BgnsLvl.Edit1.Hide;
+ BgnsLvl.SpeedButton1.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit1.Text:='';//Очистить ячейку
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+
+procedure TBgnsLvl.SpeedButton2Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if Edit2.Text<>'' then
+begin
+if Edit2.Text='8' then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='1' then
+ begin
+ //Добавить балл за прохождение
+  P:='2';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit2.Text:='';//Очистить ячейку
+ BgnsLvl.Edit2.Hide;
+ BgnsLvl.SpeedButton2.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit2.Text:='';//Очистить ячейку
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton3Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if Edit3.Text<>'' then
+begin
+if Edit3.Text='11' then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='2' then
+ begin
+
+ //Добавить балл за прохождение
+  P:='3';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Неверно введены числа", если ранее была показана
+ Edit3.Text:='';//Очистить ячейку
+ BgnsLvl.Edit3.Hide;
+ BgnsLvl.SpeedButton3.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit3.Text:='';//Очистить ячейку
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton4Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if Edit4.Text<>'' then
+begin
+if Edit4.Text='16' then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='3' then
+ begin
+ //Добавить балл за прохождение
+  P:='4';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit4.Text:='';//Очистить ячейку
+ BgnsLvl.Edit4.Hide;
+ BgnsLvl.SpeedButton4.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit4.Text:='';//Очистить ячейку
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton5Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit5.Text<>'') and (Edit5b.Text<>'') then
+begin
+if (Edit5.Text='16') and (Edit5b.Text='13') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='4' then
+ begin
+ //Добавить балл за прохождение
+  P:='5';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit5.Text:='';//Очистить ячейку
+ Edit5b.Text:='';
+ BgnsLvl.Edit5.Hide;
+ BgnsLvl.Edit5b.Hide;
+ BgnsLvl.SpeedButton5.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit5.Text:='';//Очистить ячейку
+Edit5b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton6Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit6.Text<>'') and (Edit6b.Text<>'') then
+begin
+if (Edit6.Text='10') and (Edit6b.Text='90') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='5' then
+ begin
+ //Добавить балл за прохождение
+  P:='6';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit6.Text:='';//Очистить ячейку
+ Edit6b.Text:='';
+ BgnsLvl.Edit6.Hide;
+ BgnsLvl.Edit6b.Hide;
+ BgnsLvl.SpeedButton6.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit6.Text:='';//Очистить ячейку
+Edit6b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton7Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit7.Text<>'') and (Edit7b.Text<>'') then
+begin
+if (Edit7.Text='19') and (Edit7b.Text='18') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='6' then
+ begin
+ //Добавить балл за прохождение
+  P:='7';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit7.Text:='';//Очистить ячейку
+ Edit7b.Text:='';
+ BgnsLvl.Edit7.Hide;
+ BgnsLvl.Edit7b.Hide;
+ BgnsLvl.SpeedButton7.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit7.Text:='';//Очистить ячейку
+Edit7b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton8Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit8.Text<>'') and (Edit8b.Text<>'') then
+begin
+if (Edit8.Text='24') and (Edit8b.Text='21') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='7' then
+ begin
+ //Добавить балл за прохождение
+  P:='8';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit8.Text:='';//Очистить ячейку
+ Edit8b.Text:='';
+ BgnsLvl.Edit8.Hide;
+ BgnsLvl.Edit8b.Hide;
+ BgnsLvl.SpeedButton8.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit8.Text:='';//Очистить ячейку
+Edit8b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton9Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit9.Text<>'') and (Edit9b.Text<>'') then
+begin
+if (Edit9.Text='23') and (Edit9b.Text='19') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='8' then
+ begin
+ //Добавить балл за прохождение
+  P:='9';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit9.Text:='';//Очистить ячейку
+ Edit9b.Text:='';
+ BgnsLvl.Edit9.Hide;
+ BgnsLvl.Edit9b.Hide;
+ BgnsLvl.SpeedButton9.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit9.Text:='';//Очистить ячейку
+Edit9b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.SpeedButton10Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit10.Text<>'') and (Edit10b.Text<>'') and (Edit10c.Text<>'') then
+begin
+if (Edit10.Text='13') and (Edit10b.Text='19') and (Edit10c.Text='7') then
+begin
+AssignFile(F1,'Bgns1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='9' then
+ begin
+ //Добавить балл за прохождение
+  P:='10';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit10.Text:='';//Очистить ячейку
+ Edit10b.Text:='';
+ Edit10c.Text:='';
+ BgnsLvl.Edit10.Hide;
+ BgnsLvl.Edit10b.Hide;
+ BgnsLvl.Edit10c.Hide;
+ BgnsLvl.SpeedButton10.Hide;
+ BgnsLvl.Hide;
+ Bgns.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit10.Text:='';//Очистить ячейку
+Edit10b.Text:='';
+Edit10c.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TBgnsLvl.Home3Click(Sender: TObject);
+begin
+MainForm.Show;
+
+//Скрыть нужные элементы каждого уровня
+if Edit1.Visible=True then
+begin
+ Edit1.Hide;
+ SpeedButton1.Hide; BgnsLvl.Edit1.Hide;
+ SpeedButton1.Hide;
+end;
+
+if Edit2.Visible=True then
+begin
+ Edit2.Hide;
+ SpeedButton2.Hide;
+end;
+
+if Edit3.Visible=True then
+begin
+ Edit3.Hide;
+ SpeedButton3.Hide;
+end;
+
+if Edit4.Visible=True then
+begin
+ Edit4.Hide;
+ SpeedButton4.Hide;
+end;
+
+if Edit5.Visible=True then
+begin
+ Edit5.Hide;
+ Edit5b.Hide;
+ SpeedButton5.Hide;
+end;
+
+if Edit6.Visible=True then
+begin
+ Edit6.Hide;
+ Edit6b.Hide;
+ SpeedButton6.Hide;
+end;
+
+if Edit7.Visible=True then
+begin
+ Edit7.Hide;
+ Edit7b.Hide;
+ SpeedButton7.Hide;
+end;
+
+if Edit8.Visible=True then
+begin
+ Edit8.Hide;
+ Edit8b.Hide;
+ BgnsLvl.SpeedButton8.Hide;
+end;
+
+if Edit9.Visible=True then
+begin
+ Edit9.Hide;
+ Edit9b.Hide;
+ SpeedButton9.Hide;
+end;
+
+if Edit10.Visible=True then
+begin
+ Edit10.Hide;
+ Edit10b.Hide;
+ Edit10c.Hide;
+ SpeedButton10.Hide;
+end;
+BgnsLvl.Close;
+end;
+
+end.
+
+unit Unit1;//Модуль выбора сложности уровней
+…
+procedure TChLvl.SpeedButton1Click(Sender: TObject);
+begin
+Bgns.Show;
+ChLvl.Close;
+end;
+
+procedure TChLvl.FormCreate(Sender: TObject);
+begin
+ChLvl.Width:=MainForm.Width;
+ChLvl.Height:=MainForm.Height;
+ChLvl.Left:=MainForm.Left;
+ChLvl.Top:=MainForm.Top;
+end;
+
+procedure TChLvl.SpeedButton2Click(Sender: TObject);
+begin
+Easy.Show;
+ChLvl.Close;
+end;
+
+procedure TChLvl.SpeedButton3Click(Sender: TObject);
+begin
+Mid.Show;
+ChLvl.Close;
+end;
+
+procedure TChLvl.SpeedButton4Click(Sender: TObject);
+begin
+Hard.Show;
+ChLvl.Close;
+end;
+
+procedure TChLvl.Home0Click(Sender: TObject);
+begin
+MainForm.Show;
+ChLvl.Close;
+end;
+
+end.
+
+unit Unit7;//Модуль для сброса результата
+…
+procedure TDlgSbros.Button1Click(Sender: TObject);
+var C: TextFile;
+begin
+AssignFile(C,'Bgns1.txt');
+Rewrite(C);
+WriteLn(C, '0');
+CloseFile(C);
+
+AssignFile(C,'Easy1.txt');
+Rewrite(C);
+WriteLn(C, '0');
+CloseFile(C);
+
+AssignFile(C,'Mid1.txt');
+Rewrite(C);
+WriteLn(C, '0');
+CloseFile(C);
+
+AssignFile(C,'Hard1.txt');
+Rewrite(C);
+WriteLn(C, '0');
+CloseFile(C);
+
+Zastavka.Close;
+end;
+
+procedure TDlgSbros.FormCreate(Sender: TObject);
+begin
+DlgSbros.Left:= (Screen.WorkAreaWidth - DlgSbros.Width) div 2;
+DlgSbros.Top:= (Screen.WorkAreaHeight - DlgSbros.Height) div 2;
+end;
+
+procedure TDlgSbros.Button2Click(Sender: TObject);
+begin
+DlgSbros.Close;
+end;
+
+end.
+
+unit Unit4;//Модуль с уровнями легкой сложности
+…
+procedure TEasy.FormCreate(Sender: TObject);
+begin
+Easy.Width:=MainForm.Width;
+Easy.Height:=MainForm.Height;
+Easy.Left:=MainForm.Left;
+Easy.Top:=MainForm.Top;
+end;
+
+procedure TEasy.SpeedButton1Click(Sender: TObject);
+begin
+EasyLvl.Show;
+Easy.Close;
+EasyLvl.Edit1.Show;
+EasyLvl.Edit1b.Show;
+EasyLvl.SpeedButton1.Show;
+
+//Заполнение ячеек
+EasyLvl.StringGrid1.Cells[0,0]:='';
+EasyLvl.StringGrid1.Cells[0,1]:='84';
+EasyLvl.StringGrid1.Cells[0,2]:='85';
+
+EasyLvl.StringGrid1.Cells[1,0]:='82';
+EasyLvl.StringGrid1.Cells[1,1]:='';
+EasyLvl.StringGrid1.Cells[1,2]:='90';
+
+EasyLvl.StringGrid1.Cells[2,0]:='87';
+EasyLvl.StringGrid1.Cells[2,1]:='88';
+EasyLvl.StringGrid1.Cells[2,2]:='83';
+end;
+
+procedure TEasy.FormActivate(Sender: TObject);
+var F: TextFile;
+S: string;
+begin
+Easy.Width:=MainForm.Width;
+Easy.Height:=MainForm.Height;
+Easy.Left:=MainForm.Left;
+Easy.Top:=MainForm.Top;
+
+AssignFile(F,'Easy1.txt');//Проверка прохождения пердыдущего уровня
+Reset(F);
+ReadLn(F, S);
+
+//Открытие уровней по количеству баллов
+If StrToInt(S)>=1 then
+begin
+ SpeedButton2.Visible:=True;
+ If StrToInt(S)>=2 then
+ begin
+  SpeedButton3.Visible:=True;
+  If StrToInt(S)>=3 then
+  begin
+   SpeedButton4.Visible:=True;
+   If StrToInt(S)>=4 then
+    SpeedButton5.Visible:=True;
+  end;
+ end;
+end;
+
+CloseFile(F);
+end;
+
+procedure TEasy.SpeedButton2Click(Sender: TObject);
+begin
+EasyLvl.Show;
+Easy.Close;
+EasyLvl.Edit2.Show;
+EasyLvl.Edit2b.Show;
+EasyLvl.SpeedButton2.Show;
+
+//Заполнение ячеек
+EasyLvl.StringGrid1.Cells[0,0]:='53';
+EasyLvl.StringGrid1.Cells[0,1]:='48';
+EasyLvl.StringGrid1.Cells[0,2]:='';
+
+EasyLvl.StringGrid1.Cells[1,0]:='46';
+EasyLvl.StringGrid1.Cells[1,1]:='50';
+EasyLvl.StringGrid1.Cells[1,2]:='54';
+
+EasyLvl.StringGrid1.Cells[2,0]:='';
+EasyLvl.StringGrid1.Cells[2,1]:='52';
+EasyLvl.StringGrid1.Cells[2,2]:='47';
+end;
+
+procedure TEasy.SpeedButton3Click(Sender: TObject);
+begin
+EasyLvl.Show;
+Easy.Close;
+EasyLvl.Edit3.Show;
+EasyLvl.Edit3b.Show;
+EasyLvl.SpeedButton3.Show;
+
+//Заполнение ячеек
+EasyLvl.StringGrid1.Cells[0,0]:='179';
+EasyLvl.StringGrid1.Cells[0,1]:='174';
+EasyLvl.StringGrid1.Cells[0,2]:='175';
+
+EasyLvl.StringGrid1.Cells[1,0]:='172';
+EasyLvl.StringGrid1.Cells[1,1]:='';
+EasyLvl.StringGrid1.Cells[1,2]:='180';
+
+EasyLvl.StringGrid1.Cells[2,0]:='177';
+EasyLvl.StringGrid1.Cells[2,1]:='178';
+EasyLvl.StringGrid1.Cells[2,2]:='';
+end;
+
+procedure TEasy.SpeedButton4Click(Sender: TObject);
+begin
+EasyLvl.Show;
+Easy.Close;
+EasyLvl.Edit4.Show;
+EasyLvl.Edit4b.Show;
+EasyLvl.Edit4c.Show;
+EasyLvl.SpeedButton4.Show;
+
+//Заполнение ячеек
+EasyLvl.StringGrid1.Cells[0,0]:='161';
+EasyLvl.StringGrid1.Cells[0,1]:='';
+EasyLvl.StringGrid1.Cells[0,2]:='157';
+
+EasyLvl.StringGrid1.Cells[1,0]:='154';
+EasyLvl.StringGrid1.Cells[1,1]:='158';
+EasyLvl.StringGrid1.Cells[1,2]:='';
+
+EasyLvl.StringGrid1.Cells[2,0]:='';
+EasyLvl.StringGrid1.Cells[2,1]:='160';
+EasyLvl.StringGrid1.Cells[2,2]:='155';
+end;
+
+procedure TEasy.SpeedButton5Click(Sender: TObject);
+begin
+EasyLvl.Show;
+Easy.Close;
+EasyLvl.Edit5.Show;
+EasyLvl.Edit5b.Show;
+EasyLvl.Edit5c.Show;
+EasyLvl.SpeedButton5.Show;
+
+//Заполнение ячеек
+EasyLvl.StringGrid1.Cells[0,0]:='';
+EasyLvl.StringGrid1.Cells[0,1]:='147';
+EasyLvl.StringGrid1.Cells[0,2]:='148';
+
+EasyLvl.StringGrid1.Cells[1,0]:='145';
+EasyLvl.StringGrid1.Cells[1,1]:='';
+EasyLvl.StringGrid1.Cells[1,2]:='153';
+
+EasyLvl.StringGrid1.Cells[2,0]:='150';
+EasyLvl.StringGrid1.Cells[2,1]:='151';
+EasyLvl.StringGrid1.Cells[2,2]:='';
+end;
+
+procedure TEasy.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+Easy.Hide;
+end;
+
+procedure TEasy.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+Easy.Close;
+end;
+
+end.
+
+unit Unit5;//Модуль с уровнем легкой сложности
+…
+procedure TEasyLvl.FormCreate(Sender: TObject);
+begin
+EasyLvl.Width:=MainForm.Width;
+EasyLvl.Height:=MainForm.Height;
+EasyLvl.Left:=MainForm.Left;
+EasyLvl.Top:=MainForm.Top;
+end;
+
+procedure TEasyLvl.Button1Click(Sender: TObject);
+begin
+MainForm.Close;
+end;
+
+procedure TEasyLvl.SpeedButton1Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit1.Text<>'') and (Edit1b.Text<>'') then
+begin
+if (Edit1.Text='89') and (Edit1b.Text='86') then
+begin
+AssignFile(F1,'Easy1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='0' then
+ begin
+ //Добавить балл за прохождение
+  P:='1';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit1.Text:='';//Очистить ячейку
+ Edit1b.Text:='';
+ EasyLvl.Edit1.Hide;
+ EasyLvl.Edit1b.Hide;
+ EasyLvl.SpeedButton1.Hide;
+ EasyLvl.Hide;
+ Easy.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit1.Text:='';//Очистить ячейку
+Edit1b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TEasyLvl.SpeedButton2Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit2.Text<>'') and (Edit2b.Text<>'') then
+begin
+if (Edit2.Text='51') and (Edit2b.Text='49') then
+begin
+AssignFile(F1,'Easy1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='1' then
+ begin
+ //Добавить балл за прохождение
+  P:='2';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit2.Text:='';//Очистить ячейку
+ Edit2b.Text:='';
+ EasyLvl.Edit2.Hide;
+ EasyLvl.Edit2b.Hide;
+ EasyLvl.SpeedButton2.Hide;
+ EasyLvl.Hide;
+ Easy.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit2.Text:='';//Очистить ячейку
+Edit2b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TEasyLvl.SpeedButton3Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit3.Text<>'') and (Edit3b.Text<>'') then
+begin
+if (Edit3.Text='176') and (Edit3b.Text='173') then
+begin
+AssignFile(F1,'Easy1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='2' then
+ begin
+ //Добавить балл за прохождение
+  P:='3';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit3.Text:='';//Очистить ячейку
+ Edit3b.Text:='';
+ EasyLvl.Edit3.Hide;
+ EasyLvl.Edit3b.Hide;
+ EasyLvl.SpeedButton3.Hide;
+ EasyLvl.Hide;
+ Easy.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit3.Text:='';//Очистить ячейку
+Edit3b.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TEasyLvl.SpeedButton4Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit4.Text<>'') and (Edit4b.Text<>'') and (Edit4c.Text<>'') then
+begin
+if (Edit4.Text='159') and (Edit4b.Text='156') and (Edit4c.Text='162') then
+begin
+AssignFile(F1,'Easy1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='3' then
+ begin
+ //Добавить балл за прохождение
+  P:='4';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit4.Text:='';//Очистить ячейку
+ Edit4b.Text:='';
+ Edit4c.Text:='';
+ EasyLvl.Edit4.Hide;
+ EasyLvl.Edit4b.Hide;
+ EasyLvl.Edit4c.Hide;
+ EasyLvl.SpeedButton4.Hide;
+ EasyLvl.Hide;
+ Easy.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit4.Text:='';//Очистить ячейку
+Edit4b.Text:='';
+Edit4c.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TEasyLvl.SpeedButton5Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit5.Text<>'') and (Edit5b.Text<>'') and (Edit5c.Text<>'') then
+begin
+if (Edit5.Text='152') and (Edit5b.Text='149') and (Edit5c.Text='146') then
+begin
+AssignFile(F1,'Easy1.txt');
+Reset(F1);
+ReadLn(F1, S);
+ If S='4' then
+ begin
+ //Добавить балл за прохождение
+  P:='5';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit5.Text:='';//Очистить ячейку
+ Edit5b.Text:='';
+ Edit5c.Text:='';
+ EasyLvl.Edit5.Hide;
+ EasyLvl.Edit5b.Hide;
+ EasyLvl.Edit5c.Hide;
+ EasyLvl.SpeedButton5.Hide;
+ EasyLvl.Hide;
+ Easy.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit5.Text:='';//Очистить ячейку
+Edit5b.Text:='';
+Edit5c.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TEasyLvl.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+EasyLvl.Hide;
+end;
+
+procedure TEasyLvl.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+
+//Скрыть нужные элементы каждого уровня
+if Edit1.Visible=True then
+begin
+ Edit1.Hide;
+ Edit1b.Hide;
+ SpeedButton1.Hide;
+end;
+
+if Edit2.Visible=True then
+begin
+ Edit2.Hide;
+ Edit2b.Hide;
+ SpeedButton2.Hide;
+end;
+
+if Edit3.Visible=True then
+begin
+ Edit3.Hide;
+ Edit3b.Hide;
+ SpeedButton3.Hide;
+end;
+
+if Edit4.Visible=True then
+begin
+ Edit4.Hide;
+ Edit4b.Hide;
+ Edit4c.Hide;
+ SpeedButton4.Hide;
+end;
+
+if Edit5.Visible=True then
+begin
+ Edit5.Hide;
+ Edit5b.Hide;
+ Edit5c.Hide;
+ SpeedButton5.Hide;
+end;
+EasyLvl.Close;
+end;
+
+end.
+
+unit Unit11;//Модуль с выбором уровней тяжелой сложности
+…
+procedure THard.FormActivate(Sender: TObject);
+var F: TextFile;
+S: string;
+begin
+
+AssignFile(F,'Hard1.txt');//Проверка прохождения пердыдущего уровня
+Reset(F);
+ReadLn(F, S);
+
+//Открытие уровней по количеству баллов
+If StrToInt(S)>=1 then
+begin
+ SpeedButton2.Visible:=True;
+ If StrToInt(S)>=2 then
+ begin
+  SpeedButton3.Visible:=True;
+  If StrToInt(S)>=3 then
+  begin
+   SpeedButton4.Visible:=True;
+   If StrToInt(S)>=4 then
+    SpeedButton5.Visible:=True;
+  end;
+ end;
+end;
+
+CloseFile(F);
+end;
+
+procedure THard.SpeedButton1Click(Sender: TObject);
+begin
+HardLvl.Show;
+Hard.Hide;
+HardLvl.Edit1.Show;
+HardLvl.Edit1b.Show;
+HardLvl.Edit1c.Show;
+HardLvl.Edit1d.Show;
+HardLvl.Edit1e.Show;
+HardLvl.Edit1f.Show;
+HardLvl.Edit1g.Show;
+HardLvl.SpeedButton1.Show;
+
+//Заполнение ячеек
+HardLvl.StringGrid1.Cells[0,0]:='';
+HardLvl.StringGrid1.Cells[0,1]:='4';
+HardLvl.StringGrid1.Cells[0,2]:='17';
+HardLvl.StringGrid1.Cells[0,3]:='10';
+HardLvl.StringGrid1.Cells[0,4]:='23';
+
+HardLvl.StringGrid1.Cells[1,0]:='24';
+HardLvl.StringGrid1.Cells[1,1]:='';
+HardLvl.StringGrid1.Cells[1,2]:='5';
+HardLvl.StringGrid1.Cells[1,3]:='18';
+HardLvl.StringGrid1.Cells[1,4]:='6';
+
+HardLvl.StringGrid1.Cells[2,0]:='7';
+HardLvl.StringGrid1.Cells[2,1]:='';
+HardLvl.StringGrid1.Cells[2,2]:='';
+HardLvl.StringGrid1.Cells[2,3]:='';
+HardLvl.StringGrid1.Cells[2,4]:='19';
+
+HardLvl.StringGrid1.Cells[3,0]:='20';
+HardLvl.StringGrid1.Cells[3,1]:='8';
+HardLvl.StringGrid1.Cells[3,2]:='21';
+HardLvl.StringGrid1.Cells[3,3]:='';
+HardLvl.StringGrid1.Cells[3,4]:='2';
+
+HardLvl.StringGrid1.Cells[4,0]:='3';
+HardLvl.StringGrid1.Cells[4,1]:='16';
+HardLvl.StringGrid1.Cells[4,2]:='9';
+HardLvl.StringGrid1.Cells[4,3]:='22';
+HardLvl.StringGrid1.Cells[4,4]:='';
+end;
+
+procedure THard.SpeedButton2Click(Sender: TObject);
+begin
+HardLvl.Show;
+Hard.Hide;
+HardLvl.Edit2.Show;
+HardLvl.Edit2b.Show;
+HardLvl.Edit2c.Show;
+HardLvl.Edit2d.Show;
+HardLvl.Edit2e.Show;
+HardLvl.Edit2f.Show;
+HardLvl.Edit2g.Show;
+HardLvl.Edit2h.Show;
+HardLvl.SpeedButton2.Show;
+
+//Заполнение ячеек
+HardLvl.StringGrid1.Cells[0,0]:='9';
+HardLvl.StringGrid1.Cells[0,1]:='44';
+HardLvl.StringGrid1.Cells[0,2]:='24';
+HardLvl.StringGrid1.Cells[0,3]:='';
+HardLvl.StringGrid1.Cells[0,4]:='';
+
+HardLvl.StringGrid1.Cells[1,0]:='21';
+HardLvl.StringGrid1.Cells[1,1]:='55';
+HardLvl.StringGrid1.Cells[1,2]:='32';
+HardLvl.StringGrid1.Cells[1,3]:='';
+HardLvl.StringGrid1.Cells[1,4]:='';
+
+HardLvl.StringGrid1.Cells[2,0]:='34';
+HardLvl.StringGrid1.Cells[2,1]:='13';
+HardLvl.StringGrid1.Cells[2,2]:='43';
+HardLvl.StringGrid1.Cells[2,3]:='23';
+HardLvl.StringGrid1.Cells[2,4]:='52';
+
+HardLvl.StringGrid1.Cells[3,0]:='';
+HardLvl.StringGrid1.Cells[3,1]:='';
+HardLvl.StringGrid1.Cells[3,2]:='54';
+HardLvl.StringGrid1.Cells[3,3]:='36';
+HardLvl.StringGrid1.Cells[3,4]:='10';
+
+HardLvl.StringGrid1.Cells[4,0]:='';
+HardLvl.StringGrid1.Cells[4,1]:='';
+HardLvl.StringGrid1.Cells[4,2]:='12';
+HardLvl.StringGrid1.Cells[4,3]:='42';
+HardLvl.StringGrid1.Cells[4,4]:='22';
+end;
+
+procedure THard.Button1Click(Sender: TObject);
+begin
+MainForm.Close();
+end;
+
+procedure THard.SpeedButton3Click(Sender: TObject);
+begin
+HardLvl.Show;
+Hard.Hide;
+HardLvl.Edit3.Show;
+HardLvl.Edit3b.Show;
+HardLvl.Edit3c.Show;
+HardLvl.Edit3d.Show;
+HardLvl.Edit3e.Show;
+HardLvl.Edit3f.Show;
+HardLvl.Edit3g.Show;
+HardLvl.Edit3h.Show;
+HardLvl.SpeedButton3.Show;
+
+//Заполнение ячеек
+HardLvl.StringGrid1.Cells[0,0]:='9';
+HardLvl.StringGrid1.Cells[0,1]:='3';
+HardLvl.StringGrid1.Cells[0,2]:='';
+HardLvl.StringGrid1.Cells[0,3]:='16';
+HardLvl.StringGrid1.Cells[0,4]:='15';
+
+HardLvl.StringGrid1.Cells[1,0]:='';
+HardLvl.StringGrid1.Cells[1,1]:='21';
+HardLvl.StringGrid1.Cells[1,2]:='20';
+HardLvl.StringGrid1.Cells[1,3]:='14';
+HardLvl.StringGrid1.Cells[1,4]:='';
+
+HardLvl.StringGrid1.Cells[2,0]:='';
+HardLvl.StringGrid1.Cells[2,1]:='19';
+HardLvl.StringGrid1.Cells[2,2]:='';
+HardLvl.StringGrid1.Cells[2,3]:='7';
+HardLvl.StringGrid1.Cells[2,4]:='';
+
+HardLvl.StringGrid1.Cells[3,0]:='18';
+HardLvl.StringGrid1.Cells[3,1]:='12';
+HardLvl.StringGrid1.Cells[3,2]:='6';
+HardLvl.StringGrid1.Cells[3,3]:='5';
+HardLvl.StringGrid1.Cells[3,4]:='';
+
+HardLvl.StringGrid1.Cells[4,0]:='11';
+HardLvl.StringGrid1.Cells[4,1]:='10';
+HardLvl.StringGrid1.Cells[4,2]:='4';
+HardLvl.StringGrid1.Cells[4,3]:='23';
+HardLvl.StringGrid1.Cells[4,4]:='';
+end;
+
+procedure THard.SpeedButton4Click(Sender: TObject);
+begin
+HardLvl.Show;
+Hard.Hide;
+HardLvl.Edit4.Show;
+HardLvl.Edit4b.Show;
+HardLvl.Edit4c.Show;
+HardLvl.Edit4d.Show;
+HardLvl.Edit4e.Show;
+HardLvl.Edit4f.Show;
+HardLvl.Edit4g.Show;
+HardLvl.Edit4h.Show;
+HardLvl.Edit4i.Show;
+HardLvl.Edit4j.Show;
+HardLvl.SpeedButton4.Show;
+
+//Заполнение ячеек
+HardLvl.StringGrid1.Cells[0,0]:='';
+HardLvl.StringGrid1.Cells[0,1]:='22';
+HardLvl.StringGrid1.Cells[0,2]:='1';
+HardLvl.StringGrid1.Cells[0,3]:='10';
+HardLvl.StringGrid1.Cells[0,4]:='';
+
+HardLvl.StringGrid1.Cells[1,0]:='24';
+HardLvl.StringGrid1.Cells[1,1]:='';
+HardLvl.StringGrid1.Cells[1,2]:='7';
+HardLvl.StringGrid1.Cells[1,3]:='';
+HardLvl.StringGrid1.Cells[1,4]:='20';
+
+HardLvl.StringGrid1.Cells[2,0]:='5';
+HardLvl.StringGrid1.Cells[2,1]:='9';
+HardLvl.StringGrid1.Cells[2,2]:='';
+HardLvl.StringGrid1.Cells[2,3]:='17';
+HardLvl.StringGrid1.Cells[2,4]:='21';
+
+HardLvl.StringGrid1.Cells[3,0]:='6';
+HardLvl.StringGrid1.Cells[3,1]:='';
+HardLvl.StringGrid1.Cells[3,2]:='19';
+HardLvl.StringGrid1.Cells[3,3]:='';
+HardLvl.StringGrid1.Cells[3,4]:='2';
+
+HardLvl.StringGrid1.Cells[4,0]:='';
+HardLvl.StringGrid1.Cells[4,1]:='16';
+HardLvl.StringGrid1.Cells[4,2]:='25';
+HardLvl.StringGrid1.Cells[4,3]:='4';
+HardLvl.StringGrid1.Cells[4,4]:='';
+end;
+
+procedure THard.SpeedButton5Click(Sender: TObject);
+begin
+HardLvl.Show;
+Hard.Hide;
+HardLvl.StringGrid1.Visible:=False;//Скрыть таблицу 5 на 5
+
+HardLvl.StringGrid2.Visible:=True;//Показать таблицу 6 на 6
+HardLvl.Edit5.Show;
+HardLvl.Edit5b.Show;
+HardLvl.Edit5c.Show;
+HardLvl.Edit5d.Show;
+HardLvl.Edit5e.Show;
+HardLvl.Edit5f.Show;
+HardLvl.Edit5g.Show;
+HardLvl.Edit5h.Show;
+HardLvl.Edit5i.Show;
+HardLvl.Edit5j.Show;
+HardLvl.Edit5k.Show;
+HardLvl.Edit5l.Show;
+HardLvl.Edit5m.Show;
+HardLvl.Edit5n.Show;
+HardLvl.Edit5o.Show;
+HardLvl.Edit5p.Show;
+HardLvl.Edit5q.Show;
+HardLvl.Edit5r.Show;
+HardLvl.Edit5s.Show;
+HardLvl.Edit5t.Show;
+HardLvl.SpeedButton5.Show;
+
+//Заполнение ячеек
+HardLvl.StringGrid2.Cells[0,0]:='';
+HardLvl.StringGrid2.Cells[0,1]:='7';
+HardLvl.StringGrid2.Cells[0,2]:='';
+HardLvl.StringGrid2.Cells[0,3]:='';
+HardLvl.StringGrid2.Cells[0,4]:='25';
+HardLvl.StringGrid2.Cells[0,5]:='';
+
+HardLvl.StringGrid2.Cells[1,0]:='32';
+HardLvl.StringGrid2.Cells[1,1]:='';
+HardLvl.StringGrid2.Cells[1,2]:='14';
+HardLvl.StringGrid2.Cells[1,3]:='20';
+HardLvl.StringGrid2.Cells[1,4]:='';
+HardLvl.StringGrid2.Cells[1,5]:='5';
+
+HardLvl.StringGrid2.Cells[2,0]:='';
+HardLvl.StringGrid2.Cells[2,1]:='27';
+HardLvl.StringGrid2.Cells[2,2]:='';
+HardLvl.StringGrid2.Cells[2,3]:='';
+HardLvl.StringGrid2.Cells[2,4]:='10';
+HardLvl.StringGrid2.Cells[2,5]:='';
+
+HardLvl.StringGrid2.Cells[3,0]:='';
+HardLvl.StringGrid2.Cells[3,1]:='28';
+HardLvl.StringGrid2.Cells[3,2]:='';
+HardLvl.StringGrid2.Cells[3,3]:='';
+HardLvl.StringGrid2.Cells[3,4]:='9';
+HardLvl.StringGrid2.Cells[3,5]:='';
+
+HardLvl.StringGrid2.Cells[4,0]:='35';
+HardLvl.StringGrid2.Cells[4,1]:='';
+HardLvl.StringGrid2.Cells[4,2]:='23';
+HardLvl.StringGrid2.Cells[4,3]:='17';
+HardLvl.StringGrid2.Cells[4,4]:='';
+HardLvl.StringGrid2.Cells[4,5]:='2';
+
+HardLvl.StringGrid2.Cells[5,0]:='';
+HardLvl.StringGrid2.Cells[5,1]:='30';
+HardLvl.StringGrid2.Cells[5,2]:='';
+HardLvl.StringGrid2.Cells[5,3]:='';
+HardLvl.StringGrid2.Cells[5,4]:='12';
+HardLvl.StringGrid2.Cells[5,5]:='';
+end;
+
+procedure THard.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+Hard.Close;
+end;
+
+procedure THard.FormCreate(Sender: TObject);
+begin
+Hard.Width:=MainForm.Width;
+Hard.Height:=MainForm.Height;
+Hard.Left:=MainForm.Left;
+Hard.Top:=MainForm.Top;
+end;
+
+end.
+
+unit Unit12;//Модуль с уровенем тяжелой сложност
+…
+procedure THardLvl.SpeedButton1Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit1.Text<>'') and (Edit1b.Text<>'') and (Edit1c.Text<>'') and (Edit1d.Text<>'') and (Edit1e.Text<>'') and (Edit1f.Text<>'') and (Edit1g.Text<>'') then
+begin
+if (Edit1.Text='11') and (Edit1b.Text='12') and (Edit1c.Text='25') and (Edit1d.Text='13') and (Edit1e.Text='1') and (Edit1f.Text='14') and (Edit1g.Text='15') then
+begin
+AssignFile(F1,'Hard1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='0' then
+ begin
+ //Добавить балл за прохождение
+  P:='1';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit1.Text:='';//Очистить ячейку
+ Edit1b.Text:='';
+ Edit1c.Text:='';
+ Edit1d.Text:='';
+ Edit1e.Text:='';
+ Edit1f.Text:='';
+ Edit1g.Text:='';
+ HardLvl.Edit1.Hide;
+ HardLvl.Edit1b.Hide;
+ HardLvl.Edit1c.Hide;
+ HardLvl.Edit1d.Hide;
+ HardLvl.Edit1e.Hide;
+ HardLvl.Edit1f.Hide;
+ HardLvl.Edit1g.Hide;
+ HardLvl.SpeedButton1.Hide;
+ HardLvl.Hide;
+ Hard.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit1.Text:='';//Очистить ячейку
+Edit1b.Text:='';
+Edit1c.Text:='';
+Edit1d.Text:='';
+Edit1e.Text:='';
+Edit1f.Text:='';
+Edit1g.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure THardLvl.FormCreate(Sender: TObject);
+begin
+HardLvl.Width:=MainForm.Width;
+HardLvl.Height:=MainForm.Height;
+HardLvl.Left:=MainForm.Left;
+HardLvl.Top:=MainForm.Top;
+end;
+
+procedure THardLvl.SpeedButton2Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit2.Text<>'') and (Edit2b.Text<>'') and (Edit2c.Text<>'') and (Edit2d.Text<>'') and (Edit2e.Text<>'') and (Edit2f.Text<>'') and (Edit2g.Text<>'') and (Edit2h.Text<>'') then
+begin
+if (Edit2.Text='45') and (Edit2b.Text='56') and (Edit2c.Text='20') and (Edit2d.Text='33') and (Edit2e.Text='53') and (Edit2f.Text='11') and (Edit2g.Text='35') and (Edit2h.Text='46') then
+begin
+AssignFile(F1,'Hard1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='1' then
+ begin
+ //Добавить балл за прохождение
+  P:='2';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit2.Text:='';//Очистить ячейку
+ Edit2b.Text:='';
+ Edit2c.Text:='';
+ Edit2d.Text:='';
+ Edit2e.Text:='';
+ Edit2f.Text:='';
+ Edit2g.Text:='';
+ Edit2h.Text:='';
+ HardLvl.Edit2.Hide;
+ HardLvl.Edit2b.Hide;
+ HardLvl.Edit2c.Hide;
+ HardLvl.Edit2d.Hide;
+ HardLvl.Edit2e.Hide;
+ HardLvl.Edit2f.Hide;
+ HardLvl.Edit2g.Hide;
+ HardLvl.Edit2h.Hide;
+ HardLvl.SpeedButton2.Hide;
+ HardLvl.Hide;
+ Hard.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+//begin
+Image1.Show;//Сообщение о неверном ответе
+//end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure THardLvl.SpeedButton3Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit3.Text<>'') and (Edit3b.Text<>'') and (Edit3c.Text<>'') and (Edit3d.Text<>'') and (Edit3e.Text<>'') and (Edit3f.Text<>'') and (Edit3g.Text<>'') and (Edit3h.Text<>'') then
+begin
+if (Edit3.Text='2') and (Edit3b.Text='25') and (Edit3c.Text='22') and (Edit3d.Text='13') and (Edit3e.Text='8') and (Edit3f.Text='1') and (Edit3g.Text='24') and (Edit3h.Text='17') then
+begin
+AssignFile(F1,'Hard1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='2' then
+ begin
+ //Добавить балл за прохождение
+  P:='3';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit3.Text:='';//Очистить ячейку
+ Edit3b.Text:='';
+ Edit3c.Text:='';
+ Edit3d.Text:='';
+ Edit3e.Text:='';
+ Edit3f.Text:='';
+ Edit3g.Text:='';
+ Edit3h.Text:='';
+ HardLvl.Edit3.Hide;
+ HardLvl.Edit3b.Hide;
+ HardLvl.Edit3c.Hide;
+ HardLvl.Edit3d.Hide;
+ HardLvl.Edit3e.Hide;
+ HardLvl.Edit3f.Hide;
+ HardLvl.Edit3g.Hide;
+ HardLvl.Edit3h.Hide;
+ HardLvl.SpeedButton3.Hide;
+ HardLvl.Hide;
+ Hard.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+Image1.Show;//Сообщение о неверном ответе
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure THardLvl.SpeedButton4Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit4.Text<>'') and (Edit4b.Text<>'') and (Edit4c.Text<>'') and (Edit4d.Text<>'') and (Edit4e.Text<>'') and (Edit4f.Text<>'') and (Edit4g.Text<>'') and (Edit4h.Text<>'') and (Edit4i.Text<>'') and (Edit4j.Text<>'') then
+begin
+if (Edit4.Text='18') and (Edit4b.Text='12') and (Edit4c.Text='3') and (Edit4d.Text='15') and (Edit4e.Text='13') and (Edit4f.Text='11') and (Edit4g.Text='17') and (Edit4h.Text='23') and (Edit4i.Text='14') and (Edit4j.Text='8') then
+begin
+AssignFile(F1,'Hard1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='3' then
+ begin
+ //Добавить балл за прохождение
+  P:='4';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit4.Text:='';//Очистить ячейку
+ Edit4b.Text:='';
+ Edit4c.Text:='';
+ Edit4d.Text:='';
+ Edit4e.Text:='';
+ Edit4f.Text:='';
+ Edit4g.Text:='';
+ Edit4h.Text:='';
+ Edit4i.Text:='';
+ Edit4j.Text:='';
+ HardLvl.Edit4.Hide;
+ HardLvl.Edit4b.Hide;
+ HardLvl.Edit4c.Hide;
+ HardLvl.Edit4d.Hide;
+ HardLvl.Edit4e.Hide;
+ HardLvl.Edit4f.Hide;
+ HardLvl.Edit4g.Hide;
+ HardLvl.Edit4h.Hide;
+ HardLvl.Edit4i.Hide;
+ HardLvl.Edit4j.Hide;
+ HardLvl.SpeedButton4.Hide;
+ HardLvl.Hide;
+ Hard.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+Image1.Show;//Сообщение о неверном ответе
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure THardLvl.SpeedButton5Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit5.Text<>'') and (Edit5b.Text<>'') and (Edit5c.Text<>'') and (Edit5d.Text<>'') and (Edit5e.Text<>'') and (Edit5f.Text<>'') and (Edit5g.Text<>'') and (Edit5h.Text<>'') and (Edit5i.Text<>'') and (Edit5j.Text<>'') and (Edit5k.Text<>'') and (Edit5l.Text<>'') and (Edit5m.Text<>'') and (Edit5n.Text<>'') and (Edit5o.Text<>'') and (Edit5p.Text<>'') and (Edit5q.Text<>'') and (Edit5r.Text<>'') and (Edit5s.Text<>'') and (Edit5t.Text<>'') then
+begin
+if (Edit5.Text='6') and (Edit5b.Text='3') and (Edit5c.Text='34') and (Edit5d.Text='1') and (Edit5e.Text='11') and (Edit5f.Text='8') and (Edit5g.Text='19') and (Edit5h.Text='16') and (Edit5i.Text='15') and (Edit5j.Text='24') and (Edit5k.Text='18') and (Edit5l.Text='22') and (Edit5m.Text='21') and (Edit5n.Text='13') and (Edit5o.Text='29') and (Edit5p.Text='26') and (Edit5q.Text='36') and (Edit5r.Text='33') and (Edit5s.Text='4') and (Edit5t.Text='31') then
+begin
+AssignFile(F1,'Hard1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='4' then
+ begin
+ //Добавить балл за прохождение
+  P:='5';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit5.Text:='';//Очистить ячейку
+ Edit5b.Text:='';
+ Edit5c.Text:='';
+ Edit5d.Text:='';
+ Edit5e.Text:='';
+ Edit5f.Text:='';
+ Edit5g.Text:='';
+ Edit5h.Text:='';
+ Edit5i.Text:='';
+ Edit5j.Text:='';
+ Edit5k.Text:='';
+ Edit5l.Text:='';
+ Edit5m.Text:='';
+ Edit5n.Text:='';
+ Edit5o.Text:='';
+ Edit5p.Text:='';
+ Edit5q.Text:='';
+ Edit5r.Text:='';
+ Edit5s.Text:='';
+ Edit5t.Text:='';
+ HardLvl.Edit5.Hide;
+ HardLvl.Edit5b.Hide;
+ HardLvl.Edit5c.Hide;
+ HardLvl.Edit5d.Hide;
+ HardLvl.Edit5e.Hide;
+ HardLvl.Edit5f.Hide;
+ HardLvl.Edit5g.Hide;
+ HardLvl.Edit5h.Hide;
+ HardLvl.Edit5i.Hide;
+ HardLvl.Edit5j.Hide;
+ HardLvl.Edit5k.Hide;
+ HardLvl.Edit5l.Hide;
+ HardLvl.Edit5m.Hide;
+ HardLvl.Edit5n.Hide;
+ HardLvl.Edit5o.Hide;
+ HardLvl.Edit5p.Hide;
+ HardLvl.Edit5q.Hide;
+ HardLvl.Edit5r.Hide;
+ HardLvl.Edit5s.Hide;
+ HardLvl.Edit5t.Hide;
+ HardLvl.SpeedButton5.Hide;
+ HardLvl.Hide;
+ Hard.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+Image1.Show;//Сообщение о неверном ответе
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure THardLvl.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+HardLvl.Hide;
+end;
+
+procedure THardLvl.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+//Скрыть нужные элементы каждого уровня
+if Edit1.Visible=True then
+begin
+ Edit1.Hide;
+ Edit1b.Hide;
+ Edit1c.Hide;
+ Edit1d.Hide;
+ Edit1e.Hide;
+ Edit1f.Hide;
+ Edit1g.Hide;
+ SpeedButton1.Hide;
+end;
+
+if Edit2.Visible=True then
+begin
+ Edit2.Hide;
+ Edit2b.Hide;
+ Edit2c.Hide;
+ Edit2d.Hide;
+ Edit2e.Hide;
+ Edit2f.Hide;
+ Edit2g.Hide;
+ Edit2h.Hide;
+ SpeedButton2.Hide;
+end;
+
+if Edit3.Visible=True then
+begin
+ Edit3.Hide;
+ Edit3b.Hide;
+ Edit3c.Hide;
+ Edit3d.Hide;
+ Edit3e.Hide;
+ Edit3f.Hide;
+ Edit3g.Hide;
+ Edit3h.Hide;
+ SpeedButton3.Hide;
+end;
+
+if Edit4.Visible=True then
+begin
+ Edit4.Hide;
+ Edit4b.Hide;
+ Edit4c.Hide;
+ Edit4d.Hide;
+ Edit4e.Hide;
+ Edit4f.Hide;
+ Edit4g.Hide;
+ Edit4h.Hide;
+ Edit4i.Hide;
+ Edit4j.Hide;
+ SpeedButton4.Hide;
+end;
+
+if Edit5.Visible=True then
+begin
+ Edit5.Hide;
+ Edit5b.Hide;
+ Edit5c.Hide;
+ Edit5d.Hide;
+ Edit5e.Hide;
+ Edit5f.Hide;
+ Edit5g.Hide;
+ Edit5h.Hide;
+ Edit5i.Hide;
+ Edit5j.Hide;
+ Edit5k.Hide;
+ Edit5l.Hide;
+ Edit5m.Hide;
+ Edit5n.Hide;
+ Edit5o.Hide;
+ Edit5p.Hide;
+ Edit5q.Hide;
+ Edit5r.Hide;
+ Edit5s.Hide;
+ Edit5t.Hide;
+ SpeedButton5.Hide;
+end;
+HardLvl.Close;
+end;
+
+end.
+
+unit Unit8;//Модуль с историей
+…
+procedure Thistory.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+history.Close;
+end;
+
+procedure Thistory.FormCreate(Sender: TObject);
+begin
+history.Width:=MainForm.Width;
+history.Height:=MainForm.Height;
+history.Left:=MainForm.Left;
+history.Top:=MainForm.Top;
+end;
+
+end.
+
+unit Main;//Модуль с главным меню
+…
+procedure TMainForm.SpeedButton1Click(Sender: TObject);
+begin
+ChLvl.Show;
+MainForm.Hide;
+end;
+
+procedure TMainForm.SpeedButton2Click(Sender: TObject);
+var F: TextFile;
+S: string;
+begin
+Statistics.Show;
+
+AssignFile(F,'Bgns1.txt');
+Reset(F);
+ReadLn(F, S);
+Statistics.StatisticBgns.Caption:=S;
+CloseFile(F);
+
+AssignFile(F,'Easy1.txt');
+Reset(F);
+ReadLn(F, S);
+Statistics.StatisticEasy.Caption:=S;
+CloseFile(F);
+
+AssignFile(F,'Mid1.txt');
+Reset(F);
+ReadLn(F, S);
+Statistics.StatisticMid.Caption:=S;
+CloseFile(F);
+
+AssignFile(F,'Hard1.txt');
+Reset(F);
+ReadLn(F, S);
+Statistics.StatisticHard.Caption:=S;
+CloseFile(F);
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+//Расположение формы по центру экрана
+MainForm.Left:= (Screen.WorkAreaWidth - MainForm.Width) div 2;
+MainForm.Top:= (Screen.WorkAreaHeight - MainForm.Height) div 2;
+
+end;
+
+procedure TMainForm.SpeedButton3Click(Sender: TObject);
+begin
+DlgSbros.Show;
+end;
+
+procedure TMainForm.SpeedButton5Click(Sender: TObject);
+begin
+Zastavka.Close;
+end;
+
+procedure TMainForm.N2Click(Sender: TObject);
+begin
+Zastavka.Close;
+end;
+
+procedure TMainForm.N1Click(Sender: TObject);
+begin
+MainForm.Show;
+end;
+
+procedure TMainForm.SpeedButton6Click(Sender: TObject);
+begin
+history.Show;
+end;
+
+procedure TMainForm.MediaPlayer1Notify(Sender: TObject);
+begin
+MediaPlayer1.Play;//Повтор мелодии, когда она закончится
+end;
+
+procedure TMainForm.etgfdg1Click(Sender: TObject);
+begin
+Rules.Show;
+MainForm.Hide;
+end;
+
+procedure TMainForm.N4Click(Sender: TObject);
+begin
+AboutProgramm.Show;
+end;
+
+procedure TMainForm.N3Click(Sender: TObject);
+begin
+ShellExecute(Handle, 'open', 'Help.chm',nil, nil, SW_SHOW);
+end;
+
+end.
+
+unit Unit9;//Модуль с уровнями средней сложности
+…
+procedure TMid.FormActivate(Sender: TObject);
+var F: TextFile;
+S: string;
+begin
+
+AssignFile(F,'Mid1.txt');//Проверка прохождения пердыдущего уровня
+Reset(F);
+ReadLn(F, S);
+
+//Открытие уровней по количеству баллов
+If StrToInt(S)>=1 then
+begin
+ SpeedButton2.Visible:=True;
+ If StrToInt(S)>=2 then
+ begin
+  SpeedButton3.Visible:=True;
+  If StrToInt(S)>=3 then
+  begin
+   SpeedButton4.Visible:=True;
+   If StrToInt(S)>=4 then
+    SpeedButton5.Visible:=True;
+  end;
+ end;
+end;
+
+CloseFile(F);
+end;
+
+procedure TMid.SpeedButton1Click(Sender: TObject);
+begin
+MidLvl.Show;
+Mid.Hide;
+MidLvl.Edit1.Show;
+MidLvl.Edit1b.Show;
+MidLvl.Edit1c.Show;
+MidLvl.Edit1d.Show;
+MidLvl.SpeedButton1.Show;
+
+//Заполнение ячеек
+MidLvl.StringGrid1.Cells[0,0]:='7';
+MidLvl.StringGrid1.Cells[0,1]:='2';
+MidLvl.StringGrid1.Cells[0,2]:='16';
+MidLvl.StringGrid1.Cells[0,3]:='9';
+
+MidLvl.StringGrid1.Cells[1,0]:='12';
+MidLvl.StringGrid1.Cells[1,1]:='';
+MidLvl.StringGrid1.Cells[1,2]:='';
+MidLvl.StringGrid1.Cells[1,3]:='6';
+
+MidLvl.StringGrid1.Cells[2,0]:='1';
+MidLvl.StringGrid1.Cells[2,1]:='';
+MidLvl.StringGrid1.Cells[2,2]:='';
+MidLvl.StringGrid1.Cells[2,3]:='15';
+
+MidLvl.StringGrid1.Cells[3,0]:='14';
+MidLvl.StringGrid1.Cells[3,1]:='11';
+MidLvl.StringGrid1.Cells[3,2]:='5';
+MidLvl.StringGrid1.Cells[3,3]:='4';
+end;
+
+procedure TMid.SpeedButton2Click(Sender: TObject);
+begin
+MidLvl.Show;
+Mid.Hide;
+MidLvl.Edit2.Show;
+MidLvl.Edit2b.Show;
+MidLvl.Edit2c.Show;
+MidLvl.Edit2d.Show;
+MidLvl.SpeedButton2.Show;
+
+//Заполнение ячеек
+MidLvl.StringGrid1.Cells[0,0]:='';
+MidLvl.StringGrid1.Cells[0,1]:='70';
+MidLvl.StringGrid1.Cells[0,2]:='';
+MidLvl.StringGrid1.Cells[0,3]:='21';
+
+MidLvl.StringGrid1.Cells[1,0]:='6';
+MidLvl.StringGrid1.Cells[1,1]:='17';
+MidLvl.StringGrid1.Cells[1,2]:='9';
+MidLvl.StringGrid1.Cells[1,3]:='66';
+
+MidLvl.StringGrid1.Cells[2,0]:='';
+MidLvl.StringGrid1.Cells[2,1]:='0';
+MidLvl.StringGrid1.Cells[2,2]:='72';
+MidLvl.StringGrid1.Cells[2,3]:='';
+
+MidLvl.StringGrid1.Cells[3,0]:='68';
+MidLvl.StringGrid1.Cells[3,1]:='11';
+MidLvl.StringGrid1.Cells[3,2]:='15';
+MidLvl.StringGrid1.Cells[3,3]:='4';
+end;
+
+procedure TMid.SpeedButton3Click(Sender: TObject);
+begin
+MidLvl.Show;
+Mid.Hide;
+MidLvl.Edit3.Show;
+MidLvl.Edit3b.Show;
+MidLvl.Edit3c.Show;
+MidLvl.Edit3d.Show;
+MidLvl.Edit3e.Show;
+MidLvl.SpeedButton3.Show;
+
+//Заполнение ячеек
+MidLvl.StringGrid1.Cells[0,0]:='8';
+MidLvl.StringGrid1.Cells[0,1]:='-3';
+MidLvl.StringGrid1.Cells[0,2]:='';
+MidLvl.StringGrid1.Cells[0,3]:='-4';
+
+MidLvl.StringGrid1.Cells[1,0]:='';
+MidLvl.StringGrid1.Cells[1,1]:='';
+MidLvl.StringGrid1.Cells[1,2]:='-2';
+MidLvl.StringGrid1.Cells[1,3]:='7';
+
+MidLvl.StringGrid1.Cells[2,0]:='-6';
+MidLvl.StringGrid1.Cells[2,1]:='3';
+MidLvl.StringGrid1.Cells[2,2]:='-1';
+MidLvl.StringGrid1.Cells[2,3]:='6';
+
+MidLvl.StringGrid1.Cells[3,0]:='';
+MidLvl.StringGrid1.Cells[3,1]:='0';
+MidLvl.StringGrid1.Cells[3,2]:='4';
+MidLvl.StringGrid1.Cells[3,3]:='';
+end;
+
+procedure TMid.SpeedButton4Click(Sender: TObject);
+begin
+MidLvl.Show;
+Mid.Hide;
+MidLvl.Edit4.Show;
+MidLvl.Edit4b.Show;
+MidLvl.Edit4c.Show;
+MidLvl.Edit4d.Show;
+MidLvl.Edit4e.Show;
+MidLvl.SpeedButton4.Show;
+
+//Заполнение ячеек
+MidLvl.StringGrid1.Cells[0,0]:='10';
+MidLvl.StringGrid1.Cells[0,1]:='';
+MidLvl.StringGrid1.Cells[0,2]:='';
+MidLvl.StringGrid1.Cells[0,3]:='6';
+
+MidLvl.StringGrid1.Cells[1,0]:='2';
+MidLvl.StringGrid1.Cells[1,1]:='3';
+MidLvl.StringGrid1.Cells[1,2]:='13';
+MidLvl.StringGrid1.Cells[1,3]:='';
+
+MidLvl.StringGrid1.Cells[2,0]:='8';
+MidLvl.StringGrid1.Cells[2,1]:='1';
+MidLvl.StringGrid1.Cells[2,2]:='62';
+MidLvl.StringGrid1.Cells[2,3]:='8';
+
+MidLvl.StringGrid1.Cells[3,0]:='59';
+MidLvl.StringGrid1.Cells[3,1]:='';
+MidLvl.StringGrid1.Cells[3,2]:='';
+MidLvl.StringGrid1.Cells[3,3]:='4';
+end;
+
+procedure TMid.SpeedButton5Click(Sender: TObject);
+begin
+MidLvl.Show;
+Mid.Hide;
+MidLvl.Edit5.Show;
+MidLvl.Edit5b.Show;
+MidLvl.Edit5c.Show;
+MidLvl.Edit5d.Show;
+MidLvl.Edit5e.Show;
+MidLvl.SpeedButton5.Show;
+
+//Заполнение ячеек
+MidLvl.StringGrid1.Cells[0,0]:='';
+MidLvl.StringGrid1.Cells[0,1]:='60';
+MidLvl.StringGrid1.Cells[0,2]:='40';
+MidLvl.StringGrid1.Cells[0,3]:='65';
+
+MidLvl.StringGrid1.Cells[1,0]:='70';
+MidLvl.StringGrid1.Cells[1,1]:='';
+MidLvl.StringGrid1.Cells[1,2]:='';
+MidLvl.StringGrid1.Cells[1,3]:='10';
+
+MidLvl.StringGrid1.Cells[2,0]:='75';
+MidLvl.StringGrid1.Cells[2,1]:='30';
+MidLvl.StringGrid1.Cells[2,2]:='';
+MidLvl.StringGrid1.Cells[2,3]:='15';
+
+MidLvl.StringGrid1.Cells[3,0]:='20';
+MidLvl.StringGrid1.Cells[3,1]:='45';
+MidLvl.StringGrid1.Cells[3,2]:='25';
+MidLvl.StringGrid1.Cells[3,3]:='';
+end;
+
+procedure TMid.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+Mid.Hide;
+end;
+
+procedure TMid.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+Mid.Close;
+end;
+
+procedure TMid.FormCreate(Sender: TObject);
+begin
+Mid.Width:=MainForm.Width;
+Mid.Height:=MainForm.Height;
+Mid.Left:=MainForm.Left;
+Mid.Top:=MainForm.Top;
+end;
+
+end.
+
+unit Unit10;//Модуль с уровнем дегкой сложности
+…
+procedure TMidLvl.SpeedButton1Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit1.Text<>'') and (Edit1b.Text<>'') and (Edit1c.Text<>'') and (Edit1d.Text<>'') then
+begin
+if (Edit1.Text='13') and (Edit1b.Text='8') and (Edit1c.Text='3') and (Edit1d.Text='10') then
+begin
+AssignFile(F1,'Mid1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='0' then
+ begin
+ //Добавить балл за прохождение
+  P:='1';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit1.Text:='';//Очистить ячейку
+ Edit1b.Text:='';
+ Edit1c.Text:='';
+ Edit1d.Text:='';
+ MidLvl.Edit1.Hide;
+ MidLvl.Edit1b.Hide;
+ MidLvl.Edit1c.Hide;
+ MidLvl.Edit1d.Hide;
+ MidLvl.SpeedButton1.Hide;
+ MidLvl.Hide;
+ Mid.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit1.Text:='';//Очистить ячейку
+Edit1b.Text:='';
+Edit1c.Text:='';
+Edit1d.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TMidLvl.FormCreate(Sender: TObject);
+begin
+MidLvl.Width:=MainForm.Width;
+MidLvl.Height:=MainForm.Height;
+MidLvl.Left:=MainForm.Left;
+MidLvl.Top:=MainForm.Top;
+end;
+
+procedure TMidLvl.SpeedButton2Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit2.Text<>'') and (Edit2b.Text<>'') and (Edit2c.Text<>'') and (Edit2d.Text<>'') then
+begin
+if (Edit2.Text='5') and (Edit2b.Text='19') and (Edit2c.Text='2') and (Edit2d.Text='7') then
+begin
+AssignFile(F1,'Mid1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='1' then
+ begin
+ //Добавить балл за прохождение
+  P:='2';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit2.Text:='';//Очистить ячейку
+ Edit2b.Text:='';
+ Edit2c.Text:='';
+ Edit2d.Text:='';
+ MidLvl.Edit2.Hide;
+ MidLvl.Edit2b.Hide;
+ MidLvl.Edit2c.Hide;
+ MidLvl.Edit2d.Hide;
+ MidLvl.SpeedButton2.Hide;
+ MidLvl.Hide;
+ Mid.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit2.Text:='';//Очистить ячейку
+Edit2b.Text:='';
+Edit2c.Text:='';
+Edit2d.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TMidLvl.SpeedButton3Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit3.Text<>'') and (Edit3b.Text<>'') and (Edit3c.Text<>'') and (Edit3d.Text<>'') and (Edit3e.Text<>'') then
+begin
+if (Edit3.Text='-5') and (Edit3b.Text='5') and (Edit3c.Text='2') and (Edit3d.Text='1') and (Edit3e.Text='-7') then
+begin
+AssignFile(F1,'Mid1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='2' then
+ begin
+ //Добавить балл за прохождение
+  P:='3';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit3.Text:='';//Очистить ячейку
+ Edit3b.Text:='';
+ Edit3c.Text:='';
+ Edit3d.Text:='';
+ Edit3e.Text:='';
+ MidLvl.Edit3.Hide;
+ MidLvl.Edit3b.Hide;
+ MidLvl.Edit3c.Hide;
+ MidLvl.Edit3d.Hide;
+ MidLvl.Edit3e.Hide;
+ MidLvl.SpeedButton3.Hide;
+ MidLvl.Hide;
+ Mid.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit3.Text:='';//Очистить ячейку
+Edit3b.Text:='';
+Edit3c.Text:='';
+Edit3d.Text:='';
+Edit3e.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TMidLvl.SpeedButton4Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit4.Text<>'') and (Edit4b.Text<>'') and (Edit4c.Text<>'') and (Edit4d.Text<>'') and (Edit4e.Text<>'') then
+begin
+if (Edit4.Text='64') and (Edit4b.Text='11') and (Edit4c.Text='-1') and (Edit4d.Text='5') and (Edit4e.Text='61') then
+begin
+AssignFile(F1,'Mid1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='3' then
+ begin
+ //Добавить балл за прохождение
+  P:='4';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit4.Text:='';//Очистить ячейку
+ Edit4b.Text:='';
+ Edit4c.Text:='';
+ Edit4d.Text:='';
+ Edit4e.Text:='';
+ MidLvl.Edit4.Hide;
+ MidLvl.Edit4b.Hide;
+ MidLvl.Edit4c.Hide;
+ MidLvl.Edit4d.Hide;
+ MidLvl.Edit4e.Hide;
+ MidLvl.SpeedButton4.Hide;
+ MidLvl.Hide;
+ Mid.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit4.Text:='';//Очистить ячейку
+Edit4b.Text:='';
+Edit4c.Text:='';
+Edit4d.Text:='';
+Edit4e.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TMidLvl.SpeedButton5Click(Sender: TObject);
+var F1: TextFile;
+S, P: string;
+begin
+//Запись результата
+if (Edit5.Text<>'') and (Edit5b.Text<>'') and (Edit5c.Text<>'') and (Edit5d.Text<>'') and (Edit5e.Text<>'') then
+begin
+if (Edit5.Text='5') and (Edit5b.Text='35') and (Edit5c.Text='55') and (Edit5d.Text='50') and (Edit5e.Text='80') then
+begin
+AssignFile(F1,'Mid1.txt');
+Reset(F1);
+ReadLn(F1, S);
+If S='4' then
+ begin
+ //Добавить балл за прохождение
+  P:='5';
+  Rewrite(F1);
+  WriteLn(F1, P);
+  CloseFile(F1);
+
+ end
+ else//Запись, что пройден уровень, чтобы больше не зачислял бал
+ CloseFile(F1);
+
+ Image1.Hide;//Скрыть изображение "Попробуйте еще раз", если ранее была показана
+ Edit5.Text:='';//Очистить ячейку
+ Edit5b.Text:='';
+ Edit5c.Text:='';
+ Edit5d.Text:='';
+ Edit5e.Text:='';
+ MidLvl.Edit5.Hide;
+ MidLvl.Edit5b.Hide;
+ MidLvl.Edit5c.Hide;
+ MidLvl.Edit5d.Hide;
+ MidLvl.Edit5e.Hide;
+ MidLvl.SpeedButton5.Hide;
+ MidLvl.Hide;
+ Mid.Show;//Вернутся на выбор уровня
+end
+else//Если введен неверный ответ
+begin
+Edit5.Text:='';//Очистить ячейку
+Edit5b.Text:='';
+Edit5c.Text:='';
+Edit5d.Text:='';
+Edit5e.Text:='';
+Image1.Show;//Сообщение о неверном ответе
+end;
+end
+else
+Noedit.Show;//Сообщение "Заполните пустые ячейки"
+end;
+
+procedure TMidLvl.HomeClick(Sender: TObject);
+begin
+MainForm.Show;
+MidLvl.Hide;
+end;
+
+procedure TMidLvl.Home4Click(Sender: TObject);
+begin
+MainForm.Show;
+
+//Скрыть нужные элементы каждого уровня
+if Edit1.Visible=True then
+begin
+ Edit1.Hide;
+ Edit1b.Hide;
+ Edit1c.Hide;
+ Edit1d.Hide;
+ SpeedButton1.Hide;
+end;
+
+if Edit2.Visible=True then
+begin
+ Edit2.Hide;
+ Edit2b.Hide;
+ Edit2c.Hide;
+ Edit2d.Hide;
+ SpeedButton2.Hide;
+end;
+
+if Edit3.Visible=True then
+begin
+ Edit3.Hide;
+ Edit3b.Hide;
+ Edit3c.Hide;
+ Edit3d.Hide;
+ Edit3e.Hide;
+ SpeedButton3.Hide;
+end;
+
+if Edit4.Visible=True then
+begin
+ Edit4.Hide;
+ Edit4b.Hide;
+ Edit4c.Hide;
+ Edit4d.Hide;
+ Edit4e.Hide;
+ SpeedButton4.Hide;
+end;
+
+if Edit5.Visible=True then
+begin
+ Edit5.Hide;
+ Edit5b.Hide;
+ Edit5c.Hide;
+ Edit5d.Hide;
+ Edit5e.Hide;
+ SpeedButton5.Hide;
+end;
+MidLvl.Close;
+end;
+
+end.
+
+unit Unit6;//Модуль с надписью о незаполненых ячейках
+…
+procedure TNoedit.Button1Click(Sender: TObject);
+begin
+Noedit.Hide;
+end;
+
+procedure TNoedit.FormCreate(Sender: TObject);
+begin
+Noedit.Left:= (Screen.WorkAreaWidth - Noedit.Width) div 2;
+Noedit.Top:= (Screen.WorkAreaHeight - Noedit.Height) div 2;
+end;
+
+end.
+
+unit Unit14;//Модуль с правилами игры
+…
+procedure TRules.FormCreate(Sender: TObject);
+begin
+Rules.Left:= (Screen.WorkAreaWidth - Rules.Width) div 2;
+Rules.Top:= (Screen.WorkAreaHeight - Rules.Height) div 2;
+end;
+
+procedure TRules.SpeedButton1Click(Sender: TObject);
+begin
+MainForm.Show;
+Rules.Close;
+end;
+
+end.
+
+unit Unit2;//Модуль со статистикой
+…
+procedure TStatistics.FormCreate(Sender: TObject);
+begin
+Statistics.Left:= (Screen.WorkAreaWidth - Statistics.Width) div 2;
+Statistics.Top:= (Screen.WorkAreaHeight - Statistics.Height) div 2;
+end;
+
+procedure TStatistics.Button1Click(Sender: TObject);
+begin
+Statistics.Close;
+end;
+
+end.
+
